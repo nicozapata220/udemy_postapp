@@ -6,6 +6,7 @@ import _ from 'lodash'
 class PostIndex extends Component {
     //this is a lifecycle method. la idea es cargar los datos antes de que haga el render.
     componentDidMount(){
+        if(!this.props.post){}
         this.props.fetchPosts();
     }
     render() {
@@ -28,7 +29,9 @@ class PostIndex extends Component {
         return _.map(this.props.posts, post => {
             return(
                 <li className="list-group-item" key={post.id}>
-                    {post.title}
+                    <Link to={`/posts/${post.id}`}>
+                        {post.title}
+                    </Link>
                 </li>
             )
         })
