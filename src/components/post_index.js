@@ -6,7 +6,7 @@ import _ from 'lodash'
 class PostIndex extends Component {
     //this is a lifecycle method. la idea es cargar los datos antes de que haga el render.
     componentDidMount(){
-        if(!this.props.post){}
+        
         this.props.fetchPosts();
     }
     render() {
